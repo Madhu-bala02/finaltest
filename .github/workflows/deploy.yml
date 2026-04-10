@@ -22,6 +22,6 @@ jobs:
       - name: Deploy
         run: |
           ssh -i ~/.ssh/private_key ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
-            cd /home/ec2-user/finaltest &&
+            cd /var/www/html/finaltest &&
             git pull origin master &&
             sudo systemctl restart httpd || sudo systemctl restart apache2 || true
